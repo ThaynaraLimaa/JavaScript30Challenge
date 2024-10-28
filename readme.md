@@ -5,7 +5,7 @@
 This is my resolution of the [JavaScript30: 30 day Vanilla JS Challenge](https://JavaScript30.com). 
 
 ## Challenges 
-1. JavaScript Drum Kit
+1. JavaScript Drum Kit ✔️
 2. JS and CSS Clock
 3. Playing with CSS Variables and JS
 4. Array Cardio Day 1

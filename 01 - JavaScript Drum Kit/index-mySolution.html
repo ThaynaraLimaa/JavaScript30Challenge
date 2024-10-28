@@ -59,7 +59,20 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  window.addEventListener("keydown", (e) => {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
+    if(!audio) return
 
+    audio.currentTime = 0; 
+    key.classList.add('playing')
+    audio.play()
+    
+    // transitionend: evento que é disparado quando a transição css chega ao fim, vi depois na solução
+    key.addEventListener('transitionend', () => {
+      key.classList.remove('playing')
+    })
+  })
 </script>
 
 
