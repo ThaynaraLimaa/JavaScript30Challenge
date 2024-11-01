@@ -22,10 +22,11 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
+    :root {
+      --spacing: 5px; 
+      --background: white; 
+      --blur: 0
+    }
 
     body {
       text-align: center;
@@ -43,9 +44,31 @@
     input {
       width: 100px;
     }
+
+    img {
+      background-color: var(--background);
+      padding: var(--spacing);
+      filter: blur(var(--blur));
+    }
   </style>
 
   <script>
+    const colorInput = document.querySelector('#base')
+    const spacingInput = document.querySelector('#spacing')
+    const blurInput = document.querySelector('#blur')
+
+    colorInput.addEventListener('change', () => {
+      document.documentElement.style.setProperty('--background', `${colorInput.value}`)
+    })
+
+    spacingInput.addEventListener('mousemove', () => {
+      document.documentElement.style.setProperty('--spacing', `${spacingInput.value}px`)
+    })
+
+    blurInput.addEventListener('mousemove', () => {
+      document.documentElement.style.setProperty('--blur', `${blurInput.value}px`)
+    })
+
   </script>
 
 </body>
