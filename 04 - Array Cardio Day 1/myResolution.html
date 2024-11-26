@@ -38,29 +38,69 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    const bornIn1500 = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600)
+    console.log(bornIn1500)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+    const inventorsName = inventors.map(inventor => inventor.first + ' ' + inventor.last)
+    console.log(inventorsName)
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const sorted = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+    console.log(sorted)
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    const yearsLived = inventors.reduce((acc, cur) => {
+      const lived = cur.passed - cur.year
+      return acc + lived
+    }, 0)
+    console.log(yearsLived)
 
     // 5. Sort the inventors by years lived
+    const sortedByYearLived = inventors.sort((a, b) => {
+      const aLived = a.passed - a.year 
+      const bLived = b.passed - b.year 
+      return aLived > bLived ? 1 : -1
+    })
+
+    // console.log(sortedByYearLived)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    // const links = document.querySelectorAll('.mw-category-group a'); 
+    // const result = Array.from(links).map(link => link.textContent).filter((street) => street.includes('de')); 
+
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const peopleSorted = people.sort((a, b) => {
+      const nameA = a.split(' ')
+      const nameB = b.split(' ')
+      return nameA > nameB ? 1 : -1 
+    })
+
+    console.log(peopleSorted)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
+    const intances = data.reduce((acc, cur) => {
+      const obj = {}; 
+      if(!acc[cur]) {
+        acc[cur] = 1
+      } else {
+        acc[cur] += 1
+      }
+
+      return acc 
+    }, {})
+
+    console.log(intances)
   </script>
 </body>
 </html>
