@@ -8,8 +8,8 @@ This is my resolution of the [JavaScript30: 30 day Vanilla JS Challenge](https:/
 1. JavaScript Drum Kit ✔️
 2. JS and CSS Clock ✔️
 3. Playing with CSS Variables and JS ✔️
-4. Array Cardio Day 1
-5. Flex Panels Image Gallery
+4. Array Cardio Day 1 ✔️
+5. Flex Panels Image Gallery ✔️
 6. Ajax Type Ahead
 7. Array Cardio Day 2
 8. Fun with HTML5 Canvas
